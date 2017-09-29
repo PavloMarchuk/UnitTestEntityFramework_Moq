@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E5EE1974-DB3B-4D48-9B7F-5D7618D73392}</ProjectGuid>
+    <ProjectGuid>{9EC61480-482A-4C48-932E-8581C1F8681B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RegionCity.DataLayer</RootNamespace>
-    <AssemblyName>RegionCity.DataLayer</AssemblyName>
+    <RootNamespace>RegionCity.Storage</RootNamespace>
+    <AssemblyName>RegionCity.Storage</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,8 +39,6 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,17 +47,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BOL\BusinessCity.cs" />
-    <Compile Include="BOL\BusinessRegion.cs" />
-    <Compile Include="DbLayer\City.cs" />
-    <Compile Include="DbLayer\Region.cs" />
-    <Compile Include="DbLayer\RegionCityContext.cs" />
+    <Compile Include="GenericRepository\GenericRepository.cs" />
+    <Compile Include="GenericRepository\IGenericRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\RegionRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\RegionCity.DataLayer\RegionCity.DataLayer.csproj">
+      <Project>{e5ee1974-db3b-4d48-9b7f-5d7618d73392}</Project>
+      <Name>RegionCity.DataLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
