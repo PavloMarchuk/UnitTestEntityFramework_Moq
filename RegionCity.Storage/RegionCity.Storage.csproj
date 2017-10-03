@@ -47,8 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GenericRepository\GenericRepository.cs" />
-    <Compile Include="GenericRepository\IGenericRepository.cs" />
+    <Compile Include="Service\CityDataService.cs" />
+    <Compile Include="ServiceGeneric\DataServiceGeneric.cs" />
+    <Compile Include="ServiceGeneric\IDataServiceGeneric.cs" />
+    <Compile Include="Service\RegionDataService.cs" />
+    <Compile Include="Repository\CityRepository.cs" />
+    <Compile Include="RepositoryGeneric\GenericRepository.cs" />
+    <Compile Include="RepositoryGeneric\IGenericRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\RegionRepository.cs" />
   </ItemGroup>
@@ -62,5 +67,6 @@
       <Name>RegionCity.DataLayer</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

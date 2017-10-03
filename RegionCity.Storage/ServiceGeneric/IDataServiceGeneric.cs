@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace RegionCity.Storage
 {
-    public interface IGenericRepository<T>
+    public interface IDataServiceGeneric<T> where T: class, new()
     {
         IEnumerable<T> GetAll();
-        //IEnumerable<T> GetByParenyId(int id);
         T Get(int id);
         T AddOrUpdate(T obj);
         T Delete(T obj);
-        void Save();
     }
 }

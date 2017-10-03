@@ -16,11 +16,4 @@ namespace RegionCity.Storage
         {
         }
     }
-
-    public class CityRepository : GenericRepository<City>
-    {
-        public CityRepository(DbContext context) : base(context)
-        {
-        }
-    }
 }
