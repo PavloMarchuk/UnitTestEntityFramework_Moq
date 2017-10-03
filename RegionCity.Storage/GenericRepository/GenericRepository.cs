@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ namespace RegionCity.Storage
     {
 
         DbContext context;
-        DbSet<T> dbSet;
+        IDbSet<T> dbSet;
 
         public GenericRepository(DbContext context)
         {
@@ -28,6 +29,20 @@ namespace RegionCity.Storage
         public IEnumerable<T> GetAll()
         {
            return dbSet;
+        }
+
+        public void AddOrUpdate(T obj)
+        {
+            dbSet.AddOrUpdate(obj);
+        }
+
+        public void Delete(T obj)
+        {
+            dbSet.Remove(obj);
+        }
+        public void Save()
+        {
+            context.SaveChanges();
         }
 
         //public abstract IEnumerable<T> GetByParentId(int id);

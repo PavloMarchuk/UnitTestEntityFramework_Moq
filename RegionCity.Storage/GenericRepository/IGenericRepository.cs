@@ -11,5 +11,8 @@ namespace RegionCity.Storage
         IEnumerable<T> GetAll();
         //IEnumerable<T> GetByParenyId(int id);
         T Get(int id);
+        T AddOrUpdate(T obj);
+        T Delete(T obj);
+        void Save();
     }
 }
